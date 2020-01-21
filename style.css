@@ -57,11 +57,11 @@ select {
     outline: none;
     vertical-align: middle;
     font-family: inherit;
-    margin: 1rem 1.5rem 1rem .3rem;
+    margin: .5rem 1.5rem .5rem .3rem;
 }
 
 input { 
-  margin: 1rem;
+  margin: .5rem;
 }
 
 .display-inline {
@@ -80,3 +80,9 @@ input {
     display: flex;
     justify-content: center;
 }
+
+.table__display {
+    display: flex;
+    justify-content: center;
+}
+
