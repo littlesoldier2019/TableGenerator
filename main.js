@@ -2,6 +2,9 @@ window.addEventListener('load', tableGenerator);
 
 function tableGenerator() {
     let tableDisplay = document.querySelector('.table__display');
+    let widthInput = document.getElementById('table-width').value;
+    let bdwidthInput = document.getElementById('border-width').value;
+    let bdcolorInput = document.getElementById('border-color').value;
     const table = document.createElement ("table");
     
  
@@ -9,8 +12,8 @@ function tableGenerator() {
         for (let j = 0; j < columnInput; j++) {
         let th = document.createElement('th');
         row[0].append(th);
-        th.style.border = "2px solid black";
-        th.style.width = "800px";
+        th.style.border = bdwidthInput + 'px' + ' solid ' + bdcolorInput;
+        // th.style.width = widthInput + 'px';
         th.textContent = 'Head ' + j;
         }
     }
@@ -21,8 +24,8 @@ function tableGenerator() {
             let tr = document.createElement('tr');
             table.append(tr);
             tableDisplay.append(table);
-            tr.style.border = "2px solid black";
-            tr.style.width = "800px";
+            table.style.width = widthInput + '%';
+            tr.style.border = bdwidthInput + 'px' + ' solid ' + bdcolorInput;
         }
     }
 
@@ -34,7 +37,7 @@ function tableGenerator() {
             for (let j = 0; j < columnInput; j++) {
                 let td = document.createElement('td');
                 td.textContent = 'value';
-                td.style.border ="1px solid black"
+                td.style.border = bdwidthInput + 'px' + ' solid ' + bdcolorInput;
                 row[i].append(td);
             }
         }
