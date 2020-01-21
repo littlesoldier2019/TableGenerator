@@ -6,67 +6,113 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML Table Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Atma' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="main.js"></script>
 </head>
 <body>
-    <div class="input__field">
-        <h1>HTML Table Generator</h1>
-        <div>
-            <div class="table__info">
-                <h2>Create Table</h2>
-                <form>
-                    <div>
-                        Number of rows: <input type="number" name="number-row" id="number-row" required>
-                        Number of column: <input type="number" name="number-column" id="number-column" required>
-                        Table width percentage <input type="number" name="table-width" id="table-width" required>
-                        Border width in pixels <input type="number" name="border-width" id="border-width" required>
-                    </div>
-                </form>       
-            </div>
-            <div class="color__info">
-                <h2>Define colors</h2>
-                <form>
-                    <div>
-                        Table background color <input type="color" value="#FF5733" name="bg-color" id="bg-color" required>
-                        Head background color <input type="color" value="#DAF7A6" name="head-bg-color" id="head-color" required>
-                        Body background color <input type="color" value="#FFC300" name="body-bg-color" id="body-color" required>
-                        Border Color <input type="color" value="#FF5733" name="border-color" id="border-color" required>
-                        Font Color <input type="color" value="#C70039" name="font-color" id="font-color" required>
-                    </div>
-                </form>
-                
-            </div>
-            <div class="font__info">
-                <h2>Decorate text</h2>
-                <form>
-                    <div>
-                        Border colapse <input type="checkbox" name="border-colapse" id="border-colapse" required>
-                        Font type <input type="radio" name="font-type" id="font-type" required>
-                        Font Weight <input type="number" name="font-weight" id="font-weight" required>
+    <div class="container">
+        <div class="input__field">
+            <h1>HTML T<span>a</span>bl<span>e</span> G<span>e</span>n<span>e</span>r<span>a</span>tor</h1>
+            <div>
+                <div class="table__info">
+                    <h2>Create Table</h2>
+                    <form>
                         <div>
-                            <p>Text align</p>
-                            <select name="text-align">
-                                <option value="justify">Justify</option>
-                                <option value="center">Center</option>
-                                <option value="left">Left</option>
-                                <option value="right">Right</option>
-                            </select>
+                            <label for="">Number of rows:</label>
+                            <input type="number" name="number-row" value="5" id="row" required>
+
+                            <lable for="">Number of column:</lable>
+                            <input type="number" name="number-column" value="10" id="column" required>
+
+                            <br/>
+
+                            <lable for="table-width">Table width percentage</lable>
+                            <input type="number" name="table-width" id="table-width" >
+
+                            <lable for="border-width">Border width in pixels</lable>
+                            <input type="number" name="border-width" id="border-width" >                           
                         </div>
+                    </form>       
+                </div>
+                <div class="color__info">
+                    <h2>Define colors</h2>
+                    <form>
                         <div>
-                            Font Size <input type="number" name="" id="font-size">
-                        </div>                       
-                        
-                    </div>
-                </form>
-            </div>
-            <div class="interact">
-                <button class="button" id="generate-table">Generate Table</button>
-                <button class="button" id="get-code">Get Code</button>
+                            <label for="bg-color">Table background color</label>
+                            <input type="color" value="#FF5733" name="bg-color" id="bg-color" >
+
+                            <label for="head-bg-color">Head background color</label>
+                            <input type="color" value="#DAF7A6" name="head-bg-color" id="head-color" >
+                            
+                            <br/>
+
+                            <label for="body-bg-color">Body background color</label>
+                            <input type="color" value="#FFC300" name="body-bg-color" id="body-color" >
+
+                            <label for="border-color">Border Color</label>
+                            <input type="color" value="#FF5733" name="border-color" id="border-color" >
+                            
+                            <label for="font-color">Font Color</label>
+                            <input type="color" value="#C70039" name="font-color" id="font-color" >
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="font__info">
+                    <h2>Decorate text</h2>
+                    <form>
+                        <div>
+                            <label for="border-colapse">Border colapse</label>  
+                            <input type="checkbox" name="border-colapse" id="border-colapse" required>
+                            <div class="display-inline">
+                                <label for="font-style">Font Style</label>
+                                <select name="font-style" id="font-style">
+                                    <option class="poppins" value="Poppins">Poppins</option>
+                                    <option class="antic" value="Antic">Antic</option>
+                                    <option class="atma" value="Atma">Atma</option>
+                                    <option class="baloo" value="Baloo">Baloo</option>
+                                    <option class="roboto" value="Roboto">Roboto</option>
+                                </select>
+                            </div>
+                            <label for="font-weight">Font Weight</label>  
+                            <input type="number" name="font-weight" id="font-weight" required>
+
+                            </br>
+
+                            <div class="display-inline">
+                                <label for="text-align">Text align</label>
+                                <select name="text-align">
+                                    <option value="justify">Justify</option>
+                                    <option value="center">Center</option>
+                                    <option value="left">Left</option>
+                                    <option value="right">Right</option>
+                                </select>
+                            </div>
+                            <div class="display-inline">
+                                <label for="font-size">Font Size </label>
+                                <input type="number" name="font-size" id="font-size">
+                            </div>                       
+                            
+                        </div>
+                    </form>
+                </div>
+                <div class="interact">
+                    <button class="button" id="generate">Generate Table</button>
+                    <button class="button" id="getcode">Get Code</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="table__display">
+    
+    <div class="container">
+        <div class="table__display">
 
+        </div>
     </div>
+    
 </body>
 </html>
