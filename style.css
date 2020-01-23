@@ -13,7 +13,15 @@ body {
 }
 
 .container {
-    padding: 0 15%;
+    padding: 0 5%;
+}
+
+.input__field {
+    padding: 0 10%;
+}
+
+.table__display {
+    margin-top: 3rem;
 }
 
 h1 {
@@ -43,6 +51,7 @@ h2 {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  width: 10rem;
 }
 
 .button:hover {
@@ -57,11 +66,12 @@ select {
     outline: none;
     vertical-align: middle;
     font-family: inherit;
-    margin: .5rem 1.5rem .5rem .3rem;
+    margin: .5rem .5rem .5rem .3rem;
 }
 
 input { 
   margin: .5rem;
+  width: 6rem;
 }
 
 .display-inline {
@@ -76,6 +86,10 @@ input {
     background-color: #FF5733 ;
 }
 
+#border-colapse {
+    width: 1rem;
+}
+
 .interact {
     display: flex;
     justify-content: center;
@@ -86,3 +100,61 @@ input {
     justify-content: center;
 }
 
+@media only screen and (max-width: 1280px) {
+    .input__field {
+        padding: 0 12%;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .input__field {
+        padding: 0 10%;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    .input__field {
+        padding: 0 8%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 0 2%;
+    }
+
+    .input__field {
+        padding: 0 2%;
+    }
+
+    input { 
+        margin: .5rem;
+        width: 3rem;
+      }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 0 2%;
+    }
+
+    .create-table, .define-color, .decor-text, .interact {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #border-colapse {
+        margin: 1rem 0;
+    }
+
+    .interact {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    button {
+        vertical-align: middle;
+    }
+}

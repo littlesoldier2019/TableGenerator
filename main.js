@@ -76,6 +76,20 @@ function tableGenerator() {
         } 
     }
 
+    let codeButton = document.getElementById('getcode');
+        codeButton.addEventListener('click',getCode);
+
+    function getCode() {
+        
+            let textArea = document.createElement("textarea");
+            let HTMLcode = document.documentElement.innerHTML;
+            textArea.value = HTMLcode;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+        
+    }
     
 
     let colapseInput = document.getElementById('border-colapse');
@@ -119,10 +133,9 @@ function tableGenerator() {
         table.style.color = tbfontColor.value;
     }
 
-            
-
-    //NOTES:form verification
 }
 
-    
+
+
+
     
