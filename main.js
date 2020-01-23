@@ -1,13 +1,12 @@
 window.addEventListener('load', tableGenerator);
 
 function tableGenerator() {
-    let tableDisplay = document.querySelector('.table__display');
-    let rowInput = +document.getElementById('row').value;
-    
+    let tableDisplay = document.querySelector('.table__display');  
     
     const table = document.createElement ("table");
 
     function createRow() {
+        let rowInput = +document.getElementById('row').value;
         let widthInput = document.getElementById('table-width').value;
         let bdwidthInput = document.getElementById('border-width').value;
         let bdcolorInput = document.getElementById('border-color').value;
@@ -17,10 +16,7 @@ function tableGenerator() {
                
             table.style.width = widthInput + '%';
             table.style.border = bdwidthInput + 'px' + ' solid ' + bdcolorInput;
-        
-        let tbfontSize = document.getElementById('font-size').value;
-            table.style.fontSize = tbfontSize + 'px';
-        
+              
             
         for (let i = 0; i < rowInput + 1; i++) {
             let tr = document.createElement('tr');
@@ -50,7 +46,6 @@ function tableGenerator() {
             let th = document.createElement('th');
             row[0].append(th);
             th.style.border = bdwidthInput + 'px' + ' solid ' + bdcolorInput;
-            // th.style.width = widthInput + 'px';
             th.textContent = 'Head ' + j;
             }
 
@@ -65,8 +60,10 @@ function tableGenerator() {
 
     }
 
+    
+
     let generateButton = document.getElementById('generate');
-    generateButton.addEventListener('click', generateTable);
+        generateButton.addEventListener('click', generateTable);
 
     function generateTable() {
         if (table.textContent != '') {
@@ -79,8 +76,10 @@ function tableGenerator() {
         } 
     }
 
+    
+
     let colapseInput = document.getElementById('border-colapse');
-    colapseInput.addEventListener('change', checkColapse);
+        colapseInput.addEventListener('change', checkColapse);
     function checkColapse() {
         if (colapseInput.checked === true) {
             table.style.borderCollapse = 'collapse';
@@ -91,24 +90,38 @@ function tableGenerator() {
     }
 
     let fontSelect = document.getElementById('font-style');
-    fontSelect.addEventListener('change', setFontStyle);
+        fontSelect.addEventListener('change', setFontStyle);
     function setFontStyle() {
         table.style.fontFamily = fontSelect.options[fontSelect.selectedIndex].text;
     }
 
-    let alignSelect = document.getElementById('text-align');
-    alignSelect.addEventListener('change', setAlign);
-    function setAlign() {
-        table.style.textAlign = alignSelect.options[alignSelect.selectedIndex].text;
-    }
-
     let weightSelect = document.getElementById('font-weight');
-    weightSelect.addEventListener('change', setFontWeight);
+        weightSelect.addEventListener('change', setFontWeight);
     function setFontWeight() {
         table.style.fontWeight = weightSelect.options[weightSelect.selectedIndex].text;
     }
 
-    //NOTES: adaptive on change, form verification
+    let alignSelect = document.getElementById('text-align');
+        alignSelect.addEventListener('change', setAlign);
+    function setAlign() {
+        table.style.textAlign = alignSelect.options[alignSelect.selectedIndex].text;
+    }
+
+    let tbfontSize = document.getElementById('font-size');
+        tbfontSize.addEventListener('change', setFontSize);
+    function setFontSize() {
+        table.style.fontSize = tbfontSize.value + 'px';
+    }
+
+    let tbfontColor = document.getElementById('font-color');
+        tbfontColor.addEventListener('change', setFontColor);
+    function setFontColor() {
+        table.style.color = tbfontColor.value;
+    }
+
+            
+
+    //NOTES:form verification
 }
 
     

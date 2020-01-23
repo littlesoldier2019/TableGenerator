@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="row">Number of row</label>
+        <input type="number" name="row" value="5" class="row">
+
+        <label for="column">Number of column</label>
+        <input type="number" name="column" value="10" class="column">
+
+        <button class="generateBtn">Generate</button>
+    </div>
+
+    <div class="flex-container">
+
+    </div>
+</body>
+</html>
+<script>
+
+const rowInput = document.querySelector (".row");
+const colInput = document.querySelector (".column");
+const flexContainer = document.querySelector(".flex-container");
+
+
+const table = document.createElement ("table");
+flexContainer.appendChild(table);
+
+
+const genButton = document.querySelector(".generateBtn");
+    genButton.addEventListener('click', tableGenerator)
+
+function tableGenerator() {
+
+    let tableHead = document.createElement ("thead");
+    let tableBody = document.createElement ("tbody");
+    table.appendChild(tableHead);
+    table.appendChild(tableBody);
+
+    for (let r = 0; r < rowInput.value; r++) {
+        const bodyRow = tableBody.insertRow ();
+
+            for (let c = 0; c < colInput.value; c++){
+                const bodyCell= bodyRow.insertCell ();      
+                bodyCell.appendChild(document.createTextNode('value'));               
+            }                
+    } 
+
+    for (let r = 0; r < 1; r++) {
+        const headRow = tableHead.insertRow ();
+
+            for (let c = 0; c < colInput.value; c++){
+                const headCell= headRow.insertCell ();      
+                headCell.appendChild(document.createTextNode('Head'));               
+            }                
+    }   
+    
+}
+  
+    
+// genButton.addEventListener('click', generateTableHead(table, data))
+    
+
+
+//     const flexContainer = document.querySelector(".flex-container");
+//     const genButton = document.querySelector(".generateBtn");
+//     const rowsInput = document.querySelector (".rows");
+//     const columnsInput = document.querySelector (".columns")
+//     function tableGenerator () {
+//         const table = document.createElement ("table");
+//         flexContainer.appendChild (table);
+//         table.setAttribute("class","grid");
+//         for (let r = 0; r < rowsInput.value; r++) {
+//             const trow = table.insertRow ();
+//             for (let c = 0; c < columnsInput.value; c++){
+//                     const cell= trow.insertCell ();
+//                     cell.setAttribute("class", "cellData")         
+//                     cell.appendChild(document.createTextNode('value'));                
+//             }                
+//         }  
+//     } // tableGenerator end
+//     genButton.addEventListener('click', tableGenerator)
+//    // genButton.addEventListener('click', generateTableHead(table, data))
+//     function generatorFixer() {
+//         if (flexContainer.textContent != '') {
+//         flexContainer.textContent = ''
+//         tableGenerator()          
+//         } else {
+//         tableGenerator()
+//         }
+//     } // end Generator Fixer
+//     genButton.addEventListener('click', () => {
+//     generatorFixer()
+//     })
+// //*********COLOR CHANGE
+//      genButton.addEventListener('click', colorChange)
+//     function colorChange (){ 
+//         const bgColor = document.querySelector (".tableBgColor");
+//         document.querySelector ("table").style.background =  bgColor.value
+//     }
+// //***********BORDER COLOR
+//      genButton.addEventListener('click', borderColorChange)
+//     function borderColorChange () {
+//        let tbData = document.querySelectorAll ("td")
+//         let dataValue = document.querySelector (".borderColor").value
+//         for (let td of tbData) {
+//             td.style.borderColor = dataValue  
+//         }
+//     }
+// //*************** FONT COLOR
+//     genButton.addEventListener('click', fontColorChange)
+//     function fontColorChange () {
+//        let cellText = document.querySelectorAll ("td")
+//         let textValue = document.querySelector (".fontColor").value
+//         for (let td of cellText) {
+//             td.style.color = textValue  
+//         }
+//     }
+
+</script>

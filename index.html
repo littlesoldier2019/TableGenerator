@@ -23,18 +23,18 @@
                     <form>
                         <div>
                             <label for="">Number of rows:</label>
-                            <input type="number" name="number-row" value="5" id="row" required>
+                            <input type="number" name="number-row" id="row" required>
 
                             <lable for="">Number of column:</lable>
-                            <input type="number" name="number-column" value="10" id="column" required>
+                            <input type="number" name="number-column" id="column" required>
 
                             <br/>
 
                             <lable for="table-width">Table width percentage</lable>
-                            <input type="number" name="table-width" value="100" id="table-width" required>
+                            <input type="number" name="table-width" id="table-width" required>
 
                             <lable for="border-width">Border width in pixels</lable>
-                            <input type="number" name="border-width" value="2" id="border-width" required>                           
+                            <input type="number" name="border-width" id="border-width" required>                           
                         </div>
                     </form>       
                 </div>
@@ -43,24 +43,26 @@
                     <form>
                         <div>
                             <label for="bg-color">Table background color</label>
-                            <input type="color" value="#FF5733" name="bg-color" id="bg-color" >
+                            <input type="color" value="#F59F8D" name="bg-color" id="bg-color" >
 
                             <label for="head-bg-color">Head background color</label>
-                            <input type="color" value="#DAF7A6" name="head-bg-color" id="head-color" >
+                            <input type="color" value="#C70039" name="head-bg-color" id="head-color" >
                             
                             <br/>
 
                             <label for="body-bg-color">Body background color</label>
-                            <input type="color" value="#FFC300" name="body-bg-color" id="body-color" >
+                            <input type="color" value="#FFE4DE" name="body-bg-color" id="body-color" >
 
                             <label for="border-color">Border Color</label>
-                            <input type="color" name="border-color" value="#85929E" id="border-color" required>
+                            <input type="color" name="border-color" value="#FF5733" id="border-color" required>
                             
-                            <label for="font-color">Font Color</label>
-                            <input type="color" value="#C70039" name="font-color" id="font-color" >
                         </div>
                     </form>
                     
+                </div>
+                <div class="interact">
+                    <button class="button" id="generate">Generate Table</button>
+                    <button class="button" id="getcode">Get Code</button>
                 </div>
                 <div class="font__info">
                     <h2>Decorate text</h2>
@@ -83,7 +85,7 @@
                                 <option>100</option>
                                 <option>200</option>
                                 <option>300</option>
-                                <option>400</option>
+                                <option selected>400</option>
                                 <option>500</option>
                                 <option>600</option>
                                 <option>700</option>
@@ -103,16 +105,18 @@
                             </div>
                             <div class="display-inline">
                                 <label for="font-size">Font Size </label>
-                                <input type="number" name="font-size" value="25" id="font-size">
-                            </div>                       
+                                <input type="number" name="font-size" value="13" id="font-size">
+                            </div>     
+                            <div class="display-inline">
+                                <label for="font-color">Font Color</label>
+                                <input type="color" value="#000000" name="font-color" id="font-color" >        
+                            </div>   
+                                   
                             
                         </div>
                     </form>
                 </div>
-                <div class="interact">
-                    <button class="button" id="generate">Generate Table</button>
-                    <button class="button" id="getcode">Get Code</button>
-                </div>
+                
             </div>
         </div>
     </div>
